@@ -1,0 +1,509 @@
+[gd_scene load_steps=36 format=4]
+
+[ext_resource type="Script" path="res://scripts/levels/Level1.gd" id="1_j7nyf"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/Brown.png" id="2_xbvxr"]
+[ext_resource type="TileSet" path="res://scenes/world/tilesets/Terrain.tres" id="3_bspq0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/terrain/Terrain.png" id="4_dqba7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/platforms/Hover.png" id="5_usw5k"]
+[ext_resource type="PackedScene" path="res://scenes/items/Fruit.tscn" id="6_jsker"]
+[ext_resource type="Script" path="res://scripts/items/Fruit.gd" id="7_6ex7q"]
+[ext_resource type="SpriteFrames" path="res://scenes/items/frames/Bananas.tres" id="8_ijfg6"]
+[ext_resource type="SpriteFrames" path="res://scenes/items/frames/Apple.tres" id="9_ijoxy"]
+[ext_resource type="SpriteFrames" path="res://scenes/items/frames/Pineapple.tres" id="10_t2wor"]
+[ext_resource type="SpriteFrames" path="res://scenes/items/frames/Kiwi.tres" id="11_l40or"]
+[ext_resource type="SpriteFrames" path="res://scenes/items/frames/Melon.tres" id="12_hnhv5"]
+[ext_resource type="SpriteFrames" path="res://scenes/items/frames/Strawberry.tres" id="13_86um8"]
+[ext_resource type="SpriteFrames" path="res://scenes/items/frames/Cherries.tres" id="14_hpass"]
+[ext_resource type="SpriteFrames" path="res://scenes/items/frames/Orange.tres" id="15_srkvl"]
+[ext_resource type="Script" path="res://scripts/narrative/StoryTrigger.gd" id="16_pgakm"]
+[ext_resource type="PackedScene" path="res://scenes/player/MaskDude.tscn" id="17_s7ois"]
+[ext_resource type="Script" path="res://scripts/player/MaskDude.gd" id="18_rw0oh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tn2kh"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5p5kc"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5x1w"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfo1x"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86oi8"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nd5kg"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qx1hq"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uowlq"]
+size = Vector2(16, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c13hn"]
+size = Vector2(30, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hccrk"]
+size = Vector2(30, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_if1t5"]
+size = Vector2(30, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6ynn"]
+size = Vector2(30, 4)
+
+[sub_resource type="CircleShape2D" id="shape"]
+radius = 8.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ta3mt"]
+size = Vector2(24, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g32qb"]
+size = Vector2(44, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnxi5"]
+size = Vector2(36, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vaqq6"]
+size = Vector2(32, 40)
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_j7nyf")
+level_size_tiles = Vector2i(32, 18)
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Pattern" type="Sprite2D" parent="Background"]
+texture_repeat = 2
+position = Vector2(34, 27)
+texture = ExtResource("2_xbvxr")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 54, 448, 224)
+
+[node name="Ground" type="TileMapLayer" parent="."]
+position = Vector2(2, 11)
+tile_map_data = PackedByteArray("AAAFAA0AAAAHAAAAAAAFAA4AAAAHAAEAAAAGAA0AAAAHAAAAAAAGAA4AAAAHAAEAAAAHAA0AAAAIAAAAAAAHAA4AAAAHAAEAAAABAAkAAAAGAAAAAAABAAoAAAAGAAEAAAABAAsAAAAGAAEAAAABAAwAAAAGAAEAAAABAA0AAAAGAAEAAAABAA4AAAAGAAEAAAACAAkAAAAHAAAAAAACAAoAAAAHAAEAAAACAAsAAAAHAAEAAAACAAwAAAAHAAEAAAACAA0AAAAHAAEAAAACAA4AAAAHAAEAAAADAAkAAAAHAAAAAAADAAoAAAAHAAEAAAADAAsAAAAHAAEAAAADAAwAAAAHAAEAAAADAA0AAAAHAAEAAAADAA4AAAAHAAEAAAAEAAkAAAAHAAAAAAAEAAoAAAAHAAEAAAAEAAsAAAAHAAEAAAAEAAwAAAAHAAEAAAAEAA0AAAAHAAEAAAAEAA4AAAAHAAEAAAAFAAkAAAAIAAAAAAAFAAoAAAAIAAEAAAAFAAsAAAAIAAEAAAAFAAwAAAAIAAEAAAAIAA4AAAAHAAAAAAAJAA4AAAAIAAAAAAAXAA0AAAAGAAAAAAAXAA4AAAAHAAEAAAAXAA8AAAAHAAIAAAAYAA0AAAAHAAAAAAAYAA4AAAAHAAEAAAAYAA8AAAAHAAIAAAAZAA0AAAAHAAAAAAAZAA4AAAAHAAEAAAAZAA8AAAAHAAIAAAAaAA0AAAAHAAAAAAAaAA4AAAAHAAEAAAAaAA8AAAAHAAIAAAAaAAcAAAAGAAAAAAAaAAgAAAAGAAEAAAAaAAkAAAAGAAEAAAAaAAoAAAAGAAEAAAAaAAsAAAAGAAEAAAAaAAwAAAAGAAEAAAAbAAcAAAAHAAAAAAAbAAgAAAAHAAEAAAAbAAkAAAAHAAEAAAAbAAoAAAAHAAEAAAAbAAsAAAAHAAEAAAAbAAwAAAAHAAEAAAAbAA0AAAAHAAEAAAAbAA4AAAAHAAEAAAAbAA8AAAAHAAIAAAAcAAcAAAAHAAAAAAAcAAgAAAAHAAEAAAAcAAkAAAAHAAEAAAAcAAoAAAAHAAEAAAAcAAsAAAAHAAEAAAAcAAwAAAAHAAEAAAAcAA0AAAAHAAEAAAAcAA4AAAAHAAEAAAAcAA8AAAAHAAIAAAAdAAcAAAAIAAAAAAAdAAgAAAAIAAEAAAAdAAkAAAAIAAEAAAAdAAoAAAAIAAEAAAAdAAsAAAAIAAEAAAAdAAwAAAAIAAEAAAAdAA0AAAAIAAEAAAAdAA4AAAAIAAEAAAAdAA8AAAAIAAIAAAAUAA4AAAAGAAAAAAAUAA8AAAAGAAIAAAAVAA4AAAAHAAAAAAAVAA8AAAAHAAIAAAAWAA4AAAAHAAAAAAAWAA8AAAAHAAIAAAAGAAoAAAASAAEAAAAHAAoAAAATAAEAAAAYAAkAAAARAAEAAAAZAAkAAAASAAEAAAA=")
+tile_set = ExtResource("3_bspq0")
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Pyramid1" type="StaticBody2D" parent="Props"]
+position = Vector2(34, 27)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Pyramid1"]
+texture = ExtResource("4_dqba7")
+centered = false
+region_enabled = true
+region_rect = Rect2(208, 16, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Pyramid1"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_tn2kh")
+
+[node name="Pyramid2" type="StaticBody2D" parent="Props"]
+position = Vector2(450, 235)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Pyramid2"]
+texture = ExtResource("4_dqba7")
+centered = false
+region_enabled = true
+region_rect = Rect2(208, 16, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Pyramid2"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_5p5kc")
+
+[node name="Pyramid3" type="StaticBody2D" parent="Props"]
+position = Vector2(34, 235)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Pyramid3"]
+texture = ExtResource("4_dqba7")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Pyramid3"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_f5x1w")
+
+[node name="Pyramid4" type="StaticBody2D" parent="Props"]
+position = Vector2(82, 235)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Pyramid4"]
+texture = ExtResource("4_dqba7")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Pyramid4"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_bfo1x")
+
+[node name="Pyramid5" type="StaticBody2D" parent="Props"]
+position = Vector2(402, 203)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Pyramid5"]
+texture = ExtResource("4_dqba7")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Pyramid5"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_86oi8")
+
+[node name="Pyramid6" type="StaticBody2D" parent="Props"]
+position = Vector2(466, 107)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Pyramid6"]
+texture = ExtResource("4_dqba7")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Pyramid6"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_nd5kg")
+
+[node name="Pyramid7" type="StaticBody2D" parent="Props"]
+position = Vector2(466, 219)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Pyramid7"]
+texture = ExtResource("4_dqba7")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Pyramid7"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_qx1hq")
+
+[node name="PyramidTall" type="StaticBody2D" parent="Props"]
+position = Vector2(50, 219)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/PyramidTall"]
+texture = ExtResource("4_dqba7")
+centered = false
+region_enabled = true
+region_rect = Rect2(240, 0, 16, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/PyramidTall"]
+position = Vector2(8, 12)
+shape = SubResource("RectangleShape2D_uowlq")
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Hover1" type="StaticBody2D" parent="Platforms"]
+position = Vector2(169, 135)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Hover1"]
+position = Vector2(-16, 0)
+texture = ExtResource("5_usw5k")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Hover1"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_c13hn")
+one_way_collision = true
+
+[node name="Hover2" type="StaticBody2D" parent="Platforms"]
+position = Vector2(222, 140)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Hover2"]
+position = Vector2(-16, 0)
+texture = ExtResource("5_usw5k")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Hover2"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_hccrk")
+one_way_collision = true
+
+[node name="Hover3" type="StaticBody2D" parent="Platforms"]
+position = Vector2(277, 132)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Hover3"]
+position = Vector2(-16, 0)
+texture = ExtResource("5_usw5k")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Hover3"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_if1t5")
+one_way_collision = true
+
+[node name="Hover4" type="StaticBody2D" parent="Platforms"]
+position = Vector2(330, 137)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Hover4"]
+position = Vector2(-16, 0)
+texture = ExtResource("5_usw5k")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Hover4"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_a6ynn")
+one_way_collision = true
+
+[node name="Frame" type="TileMapLayer" parent="."]
+position = Vector2(2, 11)
+tile_map_data = PackedByteArray("AAABAAAAAQACAAYAAAACAAAAAQABAAYAAAADAAAAAQABAAYAAAAEAAAAAQABAAYAAAAFAAAAAQABAAYAAAAGAAAAAQABAAYAAAAHAAAAAQABAAYAAAAIAAAAAQABAAYAAAAJAAAAAQABAAYAAAAKAAAAAQABAAYAAAALAAAAAQABAAYAAAAMAAAAAQABAAYAAAANAAAAAQABAAYAAAAOAAAAAQABAAYAAAAPAAAAAQABAAYAAAAQAAAAAQABAAYAAAARAAAAAQABAAYAAAASAAAAAQABAAYAAAATAAAAAQABAAYAAAAUAAAAAQABAAYAAAAVAAAAAQABAAYAAAAWAAAAAQABAAYAAAAXAAAAAQABAAYAAAAYAAAAAQABAAYAAAAZAAAAAQABAAYAAAAaAAAAAQABAAYAAAAbAAAAAQABAAYAAAAcAAAAAQABAAYAAAAdAAAAAQABAAYAAAAeAAAAAQABAAYAAAABAAEAAQACAAUAAAABAAIAAQACAAUAAAABAAMAAQACAAUAAAABAAQAAQACAAUAAAABAAUAAQACAAUAAAABAAYAAQACAAUAAAABAAcAAQACAAUAAAAAAAkAAQACAAUAAAAAAAoAAQACAAUAAAAAAAsAAQACAAUAAAAAAAwAAQACAAUAAAAAAA0AAQACAAUAAAAAAA4AAQACAAUAAAAAAA8AAQACAAYAAAABAAgAAQACAAYAAAAeAAEAAQAAAAEAAAAeAAIAAQAAAAEAAAAeAAMAAQAAAAEAAAAeAAQAAQAAAAEAAAAeAAUAAQAAAAEAAAAeAAYAAQAAAAEAAAAeAAcAAQAAAAEAAAAeAAgAAQAAAAEAAAAeAAkAAQAAAAEAAAAeAAoAAQAAAAEAAAAeAAsAAQAAAAEAAAAeAAwAAQAAAAEAAAAeAA0AAQAAAAEAAAAeAA4AAQAAAAEAAAAeAA8AAQAAAAEAAAABAA8AAQABAAAAAAACAA8AAQABAAAAAAADAA8AAQABAAAAAAAEAA8AAQABAAAAAAAFAA8AAQABAAAAAAAGAA8AAQABAAAAAAAHAA8AAQABAAAAAAAIAA8AAQABAAAAAAAJAA8AAQABAAAAAAAKAA8AAQABAAAAAAALAA8AAQABAAAAAAAMAA8AAQABAAAAAAANAA8AAQABAAAAAAAOAA8AAQABAAAAAAAPAA8AAQABAAAAAAAQAA8AAQABAAAAAAARAA8AAQABAAAAAAASAA8AAQABAAAAAAATAA8AAQACAAAAAAA=")
+tile_set = ExtResource("3_bspq0")
+
+[node name="Fruits" type="Node2D" parent="."]
+
+[node name="Bananas1" type="Area2D" parent="Fruits" instance=ExtResource("6_jsker")]
+position = Vector2(167, 57)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_6ex7q")
+frames = ExtResource("8_ijfg6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fruits/Bananas1"]
+sprite_frames = ExtResource("9_ijoxy")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fruits/Bananas1"]
+shape = SubResource("shape")
+
+[node name="Pineapple2" type="Area2D" parent="Fruits" instance=ExtResource("6_jsker")]
+position = Vector2(202, 57)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_6ex7q")
+frames = ExtResource("10_t2wor")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fruits/Pineapple2"]
+sprite_frames = ExtResource("9_ijoxy")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fruits/Pineapple2"]
+shape = SubResource("shape")
+
+[node name="Kiwi3" type="Area2D" parent="Fruits" instance=ExtResource("6_jsker")]
+position = Vector2(240, 58)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_6ex7q")
+frames = ExtResource("11_l40or")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fruits/Kiwi3"]
+sprite_frames = ExtResource("9_ijoxy")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fruits/Kiwi3"]
+shape = SubResource("shape")
+
+[node name="Melon4" type="Area2D" parent="Fruits" instance=ExtResource("6_jsker")]
+position = Vector2(276, 58)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_6ex7q")
+frames = ExtResource("12_hnhv5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fruits/Melon4"]
+sprite_frames = ExtResource("9_ijoxy")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fruits/Melon4"]
+shape = SubResource("shape")
+
+[node name="Strawberry5" type="Area2D" parent="Fruits" instance=ExtResource("6_jsker")]
+position = Vector2(310, 59)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_6ex7q")
+frames = ExtResource("13_86um8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fruits/Strawberry5"]
+sprite_frames = ExtResource("9_ijoxy")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fruits/Strawberry5"]
+shape = SubResource("shape")
+
+[node name="Cherries6" type="Area2D" parent="Fruits" instance=ExtResource("6_jsker")]
+position = Vector2(347, 60)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_6ex7q")
+frames = ExtResource("14_hpass")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fruits/Cherries6"]
+sprite_frames = ExtResource("9_ijoxy")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fruits/Cherries6"]
+shape = SubResource("shape")
+
+[node name="Pineapple7" type="Area2D" parent="Fruits" instance=ExtResource("6_jsker")]
+position = Vector2(146, 86)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_6ex7q")
+frames = ExtResource("10_t2wor")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fruits/Pineapple7"]
+sprite_frames = ExtResource("9_ijoxy")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fruits/Pineapple7"]
+shape = SubResource("shape")
+
+[node name="Apple8" type="Area2D" parent="Fruits" instance=ExtResource("6_jsker")]
+position = Vector2(183, 87)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_6ex7q")
+frames = ExtResource("9_ijoxy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fruits/Apple8"]
+sprite_frames = ExtResource("9_ijoxy")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fruits/Apple8"]
+shape = SubResource("shape")
+
+[node name="Cherries9" type="Area2D" parent="Fruits" instance=ExtResource("6_jsker")]
+position = Vector2(219, 88)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_6ex7q")
+frames = ExtResource("14_hpass")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fruits/Cherries9"]
+sprite_frames = ExtResource("9_ijoxy")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fruits/Cherries9"]
+shape = SubResource("shape")
+
+[node name="Bananas10" type="Area2D" parent="Fruits" instance=ExtResource("6_jsker")]
+position = Vector2(256, 87)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_6ex7q")
+frames = ExtResource("8_ijfg6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fruits/Bananas10"]
+sprite_frames = ExtResource("9_ijoxy")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fruits/Bananas10"]
+shape = SubResource("shape")
+
+[node name="Orange11" type="Area2D" parent="Fruits" instance=ExtResource("6_jsker")]
+position = Vector2(291, 88)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_6ex7q")
+frames = ExtResource("15_srkvl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fruits/Orange11"]
+sprite_frames = ExtResource("9_ijoxy")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fruits/Orange11"]
+shape = SubResource("shape")
+
+[node name="Pineapple12" type="Area2D" parent="Fruits" instance=ExtResource("6_jsker")]
+position = Vector2(326, 86)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_6ex7q")
+frames = ExtResource("10_t2wor")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fruits/Pineapple12"]
+sprite_frames = ExtResource("9_ijoxy")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fruits/Pineapple12"]
+shape = SubResource("shape")
+
+[node name="Apple13" type="Area2D" parent="Fruits" instance=ExtResource("6_jsker")]
+position = Vector2(366, 87)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_6ex7q")
+frames = ExtResource("9_ijoxy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fruits/Apple13"]
+sprite_frames = ExtResource("9_ijoxy")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fruits/Apple13"]
+shape = SubResource("shape")
+
+[node name="FloorShade" type="TileMapLayer" parent="."]
+modulate = Color(0.6, 0.6, 0.7, 1)
+position = Vector2(2, 11)
+tile_map_data = PackedByteArray("AAATABAAAQABAAAAAAAUABAAAQABAAAAAAAVABAAAQABAAAAAAAWABAAAQABAAAAAAAXABAAAQABAAAAAAAYABAAAQABAAAAAAAZABAAAQABAAAAAAAaABAAAQABAAAAAAAbABAAAQABAAAAAAAcABAAAQABAAAAAAAdABAAAQABAAAAAAA=")
+tile_set = ExtResource("3_bspq0")
+
+[node name="StoryTriggers" type="Node2D" parent="."]
+
+[node name="Trigger_hint_double_jump" type="Area2D" parent="StoryTriggers"]
+position = Vector2(92, 140)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("16_pgakm")
+story_id = "hint_double_jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoryTriggers/Trigger_hint_double_jump"]
+shape = SubResource("RectangleShape2D_ta3mt")
+
+[node name="Trigger_hint_dash" type="Area2D" parent="StoryTriggers"]
+position = Vector2(222, 118)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("16_pgakm")
+story_id = "hint_dash"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoryTriggers/Trigger_hint_dash"]
+shape = SubResource("RectangleShape2D_g32qb")
+
+[node name="Trigger_totem_midway" type="Area2D" parent="StoryTriggers"]
+position = Vector2(402, 140)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("16_pgakm")
+story_id = "totem_midway"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoryTriggers/Trigger_totem_midway"]
+shape = SubResource("RectangleShape2D_pnxi5")
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(64, 155)
+
+[node name="Goal" type="Area2D" parent="."]
+position = Vector2(436, 123)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_vaqq6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Goal"]
+position = Vector2(0, -16)
+texture = ExtResource("4_dqba7")
+region_enabled = true
+region_rect = Rect2(288, 144, 32, 32)
+
+[node name="Label" type="Label" parent="Goal"]
+offset_left = -14.0
+offset_top = -46.0
+offset_right = -14.0
+offset_bottom = -46.0
+theme_override_font_sizes/font_size = 8
+text = "META"
+
+[node name="MaskDude" type="CharacterBody2D" parent="." instance=ExtResource("17_s7ois")]
+position = Vector2(64, 155)
+collision_layer = 2
+floor_snap_length = 4.0
+script = ExtResource("18_rw0oh")

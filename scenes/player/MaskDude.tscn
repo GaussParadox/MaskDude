@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/player/MaskDude.gd" id="1"]
+[ext_resource type="SpriteFrames" path="res://scenes/player/MaskDudeFrames.tres" id="2"]
+[ext_resource type="AudioStream" path="res://assets/audio/jump.ogg" id="3"]
+[ext_resource type="AudioStream" path="res://assets/audio/fireball.ogg" id="4"]
+
+[sub_resource type="RectangleShape2D" id="shape"]
+size = Vector2(14, 24)
+
+[node name="MaskDude" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 1
+floor_snap_length = 4.0
+script = ExtResource("1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = ExtResource("2")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("shape")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -24)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3")
+volume_db = -8.0
+
+[node name="DashSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4")
+volume_db = -8.0
+pitch_scale = 1.3
+
+[node name="StateLabel" type="Label" parent="."]
+visible = false
+offset_left = -28.0
+offset_top = -44.0
+offset_right = 28.0
+offset_bottom = -32.0
+theme_override_font_sizes/font_size = 6
+text = "IDLE"
+horizontal_alignment = 1

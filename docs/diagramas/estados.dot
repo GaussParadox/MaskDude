@@ -1,0 +1,43 @@
+digraph MaskDude {
+  rankdir=LR; compound=true; bgcolor="white"; pad=0.3; nodesep=0.5; ranksep=1.1; newrank=true;
+  node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=13, margin="0.22,0.14", color="#333333"];
+  edge [fontname="DejaVu Sans", fontsize=10.5, color="#444444"];
+
+  start [shape=circle, label="", width=0.2, style=filled, fillcolor="#222222"];
+  LOCKED [fillcolor="#e5e7eb", label="LOCKED\n(diálogo / cinemática)"];
+
+  subgraph cluster_ground {
+    label="En el suelo"; fontname="DejaVu Sans"; fontsize=12; style="dashed,rounded"; color="#6b7280";
+    IDLE [fillcolor="#dbeafe"];
+    RUN  [fillcolor="#dbeafe"];
+  }
+  subgraph cluster_air {
+    label="En el aire"; fontname="DejaVu Sans"; fontsize=12; style="dashed,rounded"; color="#6b7280";
+    JUMP [fillcolor="#dcfce7"];
+    FALL [fillcolor="#dcfce7"];
+    DOUBLE_JUMP [fillcolor="#fde68a", label="DOUBLE_JUMP\n(nuevo)", penwidth=2.2];
+  }
+  DASH [fillcolor="#fecaca", label="DASH\n(nuevo)", penwidth=2.2];
+
+  start -> LOCKED [label="inicio del nivel:\nintroducción"];
+  LOCKED -> IDLE [label="set_locked(false)\nfin del diálogo"];
+  RUN -> LOCKED [label="set_locked(true)\n(desde cualquier estado)", style=dashed, ltail=cluster_ground];
+
+  IDLE -> RUN [label="move_left / move_right\n(|vx| > 10)"];
+  RUN -> IDLE [label="sin input (vx ≈ 0)"];
+
+  IDLE -> JUMP [label="jump\n(suelo o coyote)", lhead=cluster_air];
+  RUN  -> FALL [label="sale de la plataforma", lhead=cluster_air];
+
+  JUMP -> FALL [label="vy ≥ 0 (ápice)"];
+  JUMP -> DOUBLE_JUMP [label="double_jump\n(air_jumps > 0)", color="#b45309", fontcolor="#b45309", penwidth=1.6];
+  FALL -> DOUBLE_JUMP [label="double_jump\n(air_jumps > 0)", color="#b45309", fontcolor="#b45309", penwidth=1.6];
+  DOUBLE_JUMP -> FALL [label="vy ≥ 0"];
+
+  FALL -> IDLE [label="aterriza\n(recupera salto y dash)", ltail=cluster_air, lhead=cluster_ground, constraint=false];
+
+  IDLE -> DASH [label="dash\n(cooldown = 0)", color="#b91c1c", fontcolor="#b91c1c", penwidth=1.6, ltail=cluster_ground];
+  FALL -> DASH [label="dash\n(air_dashes > 0, cooldown = 0)", color="#b91c1c", fontcolor="#b91c1c", penwidth=1.6, ltail=cluster_air];
+  DASH -> IDLE [label="fin (0.15 s) o pared\nsi está en el suelo", lhead=cluster_ground, constraint=false];
+  DASH -> FALL [label="fin (0.15 s) o pared\nsi está en el aire", lhead=cluster_air, constraint=false];
+}

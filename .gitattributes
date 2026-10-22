@@ -1,0 +1,8 @@
+# Normaliza los saltos de línea de todos los archivos de texto.
+* text=auto eol=lf
+
+# Binarios (no tocar al hacer merge)
+*.png binary
+*.ogg binary
+*.gif binary
+*.wav binary

@@ -1,0 +1,21 @@
+# Godot 4+: caché del editor (se regenera al abrir el proyecto)
+.godot/
+
+# Credenciales de exportación: NUNCA se suben (pueden contener claves y contraseñas)
+export_credentials.cfg
+
+# Salidas de exportación
+build/
+*.translation
+
+# Android / Mono
+/android/
+.mono/
+data_*/
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+*.tmp
+.vscode/
+.idea/

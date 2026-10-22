@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="GutTests" failures="0" tests="61" >
+  <testsuite name="test/unit/test_dialogue_box.gd" tests="6" failures="0" skipped="0" time="1.183643" >
+	  <testcase name="test_empieza_oculta_e_inactiva" assertions="2" status="pass" classname="test/unit/test_dialogue_box.gd" time="0.016958" >
+	  </testcase>
+	  <testcase name="test_play_muestra_la_primera_linea_con_nombre_y_retrato" assertions="5" status="pass" classname="test/unit/test_dialogue_box.gd" time="0.213557" >
+	  </testcase>
+	  <testcase name="test_primera_pulsacion_completa_el_texto_y_la_segunda_avanza" assertions="4" status="pass" classname="test/unit/test_dialogue_box.gd" time="0.227897" >
+	  </testcase>
+	  <testcase name="test_al_terminar_todas_las_lineas_se_oculta" assertions="2" status="pass" classname="test/unit/test_dialogue_box.gd" time="0.310814" >
+	  </testcase>
+	  <testcase name="test_escape_salta_todo_el_dialogo" assertions="1" status="pass" classname="test/unit/test_dialogue_box.gd" time="0.220986" >
+	  </testcase>
+	  <testcase name="test_narrador_sin_retrato_oculta_el_retrato" assertions="1" status="pass" classname="test/unit/test_dialogue_box.gd" time="0.193431" >
+	  </testcase>
+	  </testsuite>
+  <testsuite name="test/unit/test_fruit.gd" tests="5" failures="0" skipped="0" time="0.337949" >
+	  <testcase name="test_cada_fruta_tiene_animacion_idle_en_bucle_de_17_frames" assertions="32" status="pass" classname="test/unit/test_fruit.gd" time="0.000656" >
+	  </testcase>
+	  <testcase name="test_cada_fruta_tiene_animacion_collected_sin_bucle" assertions="16" status="pass" classname="test/unit/test_fruit.gd" time="0.000265" >
+	  </testcase>
+	  <testcase name="test_la_fruta_reproduce_idle_al_aparecer" assertions="3" status="pass" classname="test/unit/test_fruit.gd" time="0.143123" >
+	  </testcase>
+	  <testcase name="test_recoger_emite_la_senal_una_sola_vez" assertions="2" status="pass" classname="test/unit/test_fruit.gd" time="0.097119" >
+	  </testcase>
+	  <testcase name="test_otros_cuerpos_no_recogen_la_fruta" assertions="1" status="pass" classname="test/unit/test_fruit.gd" time="0.096786" >
+	  </testcase>
+	  </testsuite>
+  <testsuite name="test/unit/test_input_map.gd" tests="5" failures="0" skipped="0" time="0.000666" >
+	  <testcase name="test_existen_todas_las_acciones" assertions="9" status="pass" classname="test/unit/test_input_map.gd" time="0.0002" >
+	  </testcase>
+	  <testcase name="test_cada_accion_tiene_al_menos_un_evento" assertions="9" status="pass" classname="test/unit/test_input_map.gd" time="0.000182" >
+	  </testcase>
+	  <testcase name="test_doble_salto_comparte_teclas_de_salto" assertions="2" status="pass" classname="test/unit/test_input_map.gd" time="0.000085" >
+	  </testcase>
+	  <testcase name="test_dash_en_shift_y_k" assertions="2" status="pass" classname="test/unit/test_input_map.gd" time="0.000118" >
+	  </testcase>
+	  <testcase name="test_enter_ya_no_reinicia_el_nivel" assertions="2" status="pass" classname="test/unit/test_input_map.gd" time="0.000081" >
+	  </testcase>
+	  </testsuite>
+  <testsuite name="test/unit/test_mask_dude.gd" tests="21" failures="0" skipped="0" time="19.610834" >
+	  <testcase name="test_empieza_en_idle_sobre_el_suelo" assertions="2" status="pass" classname="test/unit/test_mask_dude.gd" time="0.212111" >
+	  </testcase>
+	  <testcase name="test_correr_cambia_a_run_y_vuelve_a_idle" assertions="3" status="pass" classname="test/unit/test_mask_dude.gd" time="0.993816" >
+	  </testcase>
+	  <testcase name="test_salto_basico_pasa_por_jump_y_fall" assertions="4" status="pass" classname="test/unit/test_mask_dude.gd" time="0.628048" >
+	  </testcase>
+	  <testcase name="test_pulsar_doble_salto_en_el_suelo_no_activa_doble_salto" assertions="2" status="pass" classname="test/unit/test_mask_dude.gd" time="0.262383" >
+	  </testcase>
+	  <testcase name="test_doble_salto_en_el_aire" assertions="3" status="pass" classname="test/unit/test_mask_dude.gd" time="0.503819" >
+	  </testcase>
+	  <testcase name="test_solo_un_doble_salto_por_salto" assertions="2" status="pass" classname="test/unit/test_mask_dude.gd" time="0.84169" >
+	  </testcase>
+	  <testcase name="test_aterrizar_recupera_el_doble_salto" assertions="1" status="pass" classname="test/unit/test_mask_dude.gd" time="1.145839" >
+	  </testcase>
+	  <testcase name="test_doble_salto_sube_mas_alto_que_el_salto_simple" assertions="1" status="pass" classname="test/unit/test_mask_dude.gd" time="9.018573" >
+	  </testcase>
+	  <testcase name="test_dash_en_el_suelo" assertions="2" status="pass" classname="test/unit/test_mask_dude.gd" time="0.338439" >
+	  </testcase>
+	  <testcase name="test_dash_recorre_la_distancia_esperada_y_termina" assertions="2" status="pass" classname="test/unit/test_mask_dude.gd" time="0.48322" >
+	  </testcase>
+	  <testcase name="test_dash_hacia_la_izquierda" assertions="2" status="pass" classname="test/unit/test_mask_dude.gd" time="0.290008" >
+	  </testcase>
+	  <testcase name="test_dash_tiene_cooldown" assertions="2" status="pass" classname="test/unit/test_mask_dude.gd" time="1.042016" >
+	  </testcase>
+	  <testcase name="test_dash_en_el_aire_no_tiene_gravedad" assertions="2" status="pass" classname="test/unit/test_mask_dude.gd" time="0.509446" >
+	  </testcase>
+	  <testcase name="test_dash_aereo_consume_la_carga_y_se_recupera_al_aterrizar" assertions="2" status="pass" classname="test/unit/test_mask_dude.gd" time="0.842158" >
+	  </testcase>
+	  <testcase name="test_sin_cargas_no_hay_dash_en_el_aire" assertions="1" status="pass" classname="test/unit/test_mask_dude.gd" time="0.510742" >
+	  </testcase>
+	  <testcase name="test_dash_termina_en_fall_si_esta_en_el_aire" assertions="1" status="pass" classname="test/unit/test_mask_dude.gd" time="0.690421" >
+	  </testcase>
+	  <testcase name="test_locked_ignora_el_input" assertions="4" status="pass" classname="test/unit/test_mask_dude.gd" time="0.462562" >
+	  </testcase>
+	  <testcase name="test_desbloquear_vuelve_a_idle" assertions="1" status="pass" classname="test/unit/test_mask_dude.gd" time="0.207075" >
+	  </testcase>
+	  <testcase name="test_respawn_deja_al_jugador_quieto" assertions="2" status="pass" classname="test/unit/test_mask_dude.gd" time="0.20718" >
+	  </testcase>
+	  <testcase name="test_la_etiqueta_de_depuracion_muestra_el_estado" assertions="2" status="pass" classname="test/unit/test_mask_dude.gd" time="0.214109" >
+	  </testcase>
+	  <testcase name="test_parametros_por_defecto_son_los_documentados" assertions="6" status="pass" classname="test/unit/test_mask_dude.gd" time="0.207179" >
+	  </testcase>
+	  </testsuite>
+  <testsuite name="test/unit/test_project_structure.gd" tests="8" failures="0" skipped="0" time="0.00273" >
+	  <testcase name="test_archivos_de_la_raiz" assertions="7" status="pass" classname="test/unit/test_project_structure.gd" time="0.000206" >
+	  </testcase>
+	  <testcase name="test_carpetas_requeridas" assertions="13" status="pass" classname="test/unit/test_project_structure.gd" time="0.000168" >
+	  </testcase>
+	  <testcase name="test_gitignore_excluye_cache_y_credenciales" assertions="2" status="pass" classname="test/unit/test_project_structure.gd" time="0.000165" >
+	  </testcase>
+	  <testcase name="test_no_hay_credenciales_de_exportacion" assertions="2" status="pass" classname="test/unit/test_project_structure.gd" time="0.000118" >
+	  </testcase>
+	  <testcase name="test_framework_de_pruebas_declara_version" assertions="3" status="pass" classname="test/unit/test_project_structure.gd" time="0.000221" >
+	  </testcase>
+	  <testcase name="test_cada_carpeta_de_assets_tiene_licencias" assertions="3" status="pass" classname="test/unit/test_project_structure.gd" time="0.000078" >
+	  </testcase>
+	  <testcase name="test_escena_principal_existe" assertions="1" status="pass" classname="test/unit/test_project_structure.gd" time="0.000104" >
+	  </testcase>
+	  <testcase name="test_readme_contiene_secciones_obligatorias" assertions="6" status="pass" classname="test/unit/test_project_structure.gd" time="0.00167" >
+	  </testcase>
+	  </testsuite>
+  <testsuite name="test/unit/test_story.gd" tests="8" failures="0" skipped="0" time="0.001237" >
+	  <testcase name="test_intro_tiene_titulo_tarjetas_y_dialogo" assertions="3" status="pass" classname="test/unit/test_story.gd" time="0.000148" >
+	  </testcase>
+	  <testcase name="test_todas_las_lineas_tienen_quien_y_texto" assertions="30" status="pass" classname="test/unit/test_story.gd" time="0.000462" >
+	  </testcase>
+	  <testcase name="test_todos_los_personajes_tienen_retrato" assertions="15" status="pass" classname="test/unit/test_story.gd" time="0.00011" >
+	  </testcase>
+	  <testcase name="test_final_con_todas_las_frutas" assertions="3" status="pass" classname="test/unit/test_story.gd" time="0.000091" >
+	  </testcase>
+	  <testcase name="test_final_parcial_menciona_cantidad" assertions="2" status="pass" classname="test/unit/test_story.gd" time="0.000074" >
+	  </testcase>
+	  <testcase name="test_final_sin_frutas" assertions="2" status="pass" classname="test/unit/test_story.gd" time="0.000064" >
+	  </testcase>
+	  <testcase name="test_los_tres_finales_son_distintos" assertions="3" status="pass" classname="test/unit/test_story.gd" time="0.000156" >
+	  </testcase>
+	  <testcase name="test_consejos_de_los_dos_movimientos_nuevos" assertions="4" status="pass" classname="test/unit/test_story.gd" time="0.000132" >
+	  </testcase>
+	  </testsuite>
+  <testsuite name="test/unit/test_zz_level1.gd" tests="8" failures="0" skipped="0" time="0.594205" >
+	  <testcase name="test_tiene_13_frutas" assertions="2" status="pass" classname="test/unit/test_zz_level1.gd" time="0.054745" >
+	  </testcase>
+	  <testcase name="test_hay_punto_de_inicio_y_meta" assertions="3" status="pass" classname="test/unit/test_zz_level1.gd" time="0.068756" >
+	  </testcase>
+	  <testcase name="test_limites_de_camara_son_el_tamano_del_nivel" assertions="4" status="pass" classname="test/unit/test_zz_level1.gd" time="0.068939" >
+	  </testcase>
+	  <testcase name="test_zonas_de_narrativa_apuntan_a_textos_existentes" assertions="4" status="pass" classname="test/unit/test_zz_level1.gd" time="0.06184" >
+	  </testcase>
+	  <testcase name="test_recoger_una_fruta_actualiza_el_contador" assertions="2" status="pass" classname="test/unit/test_zz_level1.gd" time="0.06915" >
+	  </testcase>
+	  <testcase name="test_llegar_a_la_meta_emite_level_completed_una_vez" assertions="1" status="pass" classname="test/unit/test_zz_level1.gd" time="0.068892" >
+	  </testcase>
+	  <testcase name="test_caer_fuera_del_escenario_reaparece_en_el_inicio" assertions="2" status="pass" classname="test/unit/test_zz_level1.gd" time="0.131336" >
+	  </testcase>
+	  <testcase name="test_el_nivel_largo_anterior_sigue_disponible" assertions="2" status="pass" classname="test/unit/test_zz_level1.gd" time="0.070547" >
+	  </testcase>
+	  </testsuite>
+  </testsuites>
