@@ -95,3 +95,7 @@ MaskDude/
 - **Gráficos y sprites**: "Pixel Adventure 1" de Pixel Frog (CC0, atribución no obligatoria pero incluida) — https://pixelfrog-assets.itch.io/pixel-adventure-1. Detalle en `assets/sprites/CREDITS.md`.
 - **Pruebas**: GUT (Godot Unit Test) de Butch Wessels, licencia MIT — https://github.com/bitwes/Gut
 - **Motor**: Godot Engine (licencia MIT).
+
+## Enlaces
+- Repositorio: https://github.com/GaussParadox/MaskDude
+- Release: https://github.com/GaussParadox/MaskDude/releases/tag/v1.0.0
