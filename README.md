@@ -53,7 +53,7 @@ editor, en el panel **GUT** (*Run All*). Detalle en `test/README.md`.
 
 ## Release
 
-Versión **v1.0.0**: _[enlace a la release, p. ej. https://github.com/<usuario>/<repo>/releases/tag/v1.0.0]_
+Versión **v1.0.0**: (https://github.com/GaussParadox/MaskDude/releases/tag/v1.0.0)
 (debe apuntar al último commit anterior a la hora límite).
 
 ## Estructura del repositorio
