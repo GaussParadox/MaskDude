@@ -5,15 +5,12 @@ ofrenda que escaparon a la Cámara Antigua y llegar al Tótem Dorado antes del a
 
 ## Integrantes
 
-| Integrante | Rol |
+| Integrante | 
 |---|---|
 |---Oscar Andrés Arciniegas Bustos — Narrativa e interfaz---|
 |---Wilson Alejandro Saavedra Arenales — Calidad y pruebas---|
 |---Hugo Orielso Cañas Lozano — Jugador y física---|
 |---Elkin Sebastian Perez Marquez — Niveles, arte, audio y build---|
-
-
-> Completar con los integrantes reales del equipo y su rol.
 
 ## Versión de Godot
 
