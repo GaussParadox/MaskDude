@@ -96,3 +96,4 @@ MaskDude/
 ## Enlaces
 - Repositorio: https://github.com/GaussParadox/MaskDude
 - Release: https://github.com/GaussParadox/MaskDude/releases/tag/v1.0.0
+- Documento y Video: https://drive.google.com/drive/folders/1Ag55IWfmIg8qpcIL52jcKgCik_Lv27sm?usp=sharing
