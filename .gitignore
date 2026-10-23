@@ -19,3 +19,8 @@ Thumbs.db
 *.tmp
 .vscode/
 .idea/
+
+#.exe y png
+*.exe
+MaskDude.png
+MaskDude.png.import
